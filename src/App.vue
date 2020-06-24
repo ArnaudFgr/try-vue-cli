@@ -1,28 +1,29 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld/>
+    <h1>Liste des inscrits</h1>
+    <inscrits :liste="personnes"></inscrits>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld'
-
+import Inscrits from "./components/Inscrits"
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
+    Inscrits
+  },
+  data: function () {
+    return {
+      personnes: [
+        {prenom: "Jean", nom: "Bréhat", age: 20},
+        {prenom: "Léa", nom: "Prijean", age: 25},
+        {prenom: "Chris", nom: "Martin", age: 38},
+        {prenom: "Pierre", nom: "Petit", age: 16},
+      ]
+    }
   }
 }
 </script>
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="css" scoped>
 </style>
